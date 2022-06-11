@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Main">
+   <children>
+      <Label layoutX="43.0" layoutY="34.0" prefHeight="35.0" prefWidth="360.0" text="Inventory Management System">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="500.0" layoutX="33.0" layoutY="80.0" stroke="BLACK" strokeType="INSIDE" width="420.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="500.0" layoutX="540.0" layoutY="80.0" stroke="BLACK" strokeType="INSIDE" width="420.0" />
+      <TableView id="PartsTable" fx:id="partsTable" layoutX="43.0" layoutY="126.0" prefHeight="380.0" prefWidth="400.0">
+        <columns>
+          <TableColumn fx:id="colPartId" prefWidth="75.0" text="Parts ID" />
+          <TableColumn fx:id="colPartName" prefWidth="75.0" text="Part Name" />
+            <TableColumn fx:id="colPartInventory" prefWidth="75.0" text="Inventory Level" />
+            <TableColumn fx:id="colPartPrice" prefWidth="75.0" text="Price/Cost per Unit" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView id="ProductsTable" fx:id="productsTable" layoutX="550.0" layoutY="126.0" prefHeight="380.0" prefWidth="400.0">
+        <columns>
+          <TableColumn fx:id="colProductId" prefWidth="75.0" text="Product ID" />
+          <TableColumn fx:id="colProductName" prefWidth="75.0" text="Product Name" />
+            <TableColumn fx:id="colProductInventory" prefWidth="75.0" text="Inventory Level" />
+            <TableColumn fx:id="colProductsPrice" prefWidth="75.0" text="Price/Cost per Unit" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="43.0" layoutY="93.0" prefHeight="35.0" prefWidth="104.0" text="Parts" />
+      <Label layoutX="550.0" layoutY="93.0" prefHeight="35.0" prefWidth="87.0" text="Products" />
+      <TextField fx:id="partSearchText" layoutX="294.0" layoutY="98.0" onAction="#partSearch" promptText="Search by PartID or Name" />
+      <TextField fx:id="productSearchText" layoutX="801.0" layoutY="98.0" onAction="#productSearch" promptText="Search by ProductID or Name" />
+      <Button layoutX="256.0" layoutY="547.0" mnemonicParsing="false" onAction="#onPartAdd" text="Add" />
+      <Button layoutX="315.0" layoutY="547.0" mnemonicParsing="false" onAction="#onPartMod" text="Modify" />
+      <Button layoutX="391.0" layoutY="547.0" mnemonicParsing="false" onAction="#onPartDelete" text="Delete" />
+      <Button layoutX="763.0" layoutY="547.0" mnemonicParsing="false" onAction="#onProductAdd" text="Add" />
+      <Button layoutX="824.0" layoutY="547.0" mnemonicParsing="false" onAction="#onProductMod" text="Modify" />
+      <Button layoutX="898.0" layoutY="547.0" mnemonicParsing="false" onAction="#onProductDelete" text="Delete" />
+      <Button layoutX="908.0" layoutY="39.0" mnemonicParsing="false" onAction="#onExit" text="Exit" />
+   </children>
+</AnchorPane>
